@@ -1,4 +1,9 @@
 (() => {
+  const headerLogos = document.querySelectorAll(".brand-header .brand-logo-horizontal");
+  headerLogos.forEach((logo) => {
+    logo.src = "/images/logo/olsen-data-horizontal-v3.png?v=20260311b";
+  });
+
   const form = document.querySelector("[data-contact-form]");
   const yearNodes = document.querySelectorAll("[data-year]");
 
