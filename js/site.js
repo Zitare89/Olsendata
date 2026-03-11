@@ -1,7 +1,7 @@
 (() => {
   const headerLogos = document.querySelectorAll(".brand-header .brand-logo-horizontal");
   headerLogos.forEach((logo) => {
-    logo.src = "/images/logo/olsen-data-horizontal-v3.png?v=20260311b";
+    logo.src = "images/logo/olsen-data-horizontal-v3.png?v=20260311b";
   });
 
   const form = document.querySelector("[data-contact-form]");
@@ -82,7 +82,7 @@
     setStatus("loading", "Sender melding...");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
