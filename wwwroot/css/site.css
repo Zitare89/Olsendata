@@ -116,6 +116,31 @@ a {
   letter-spacing: -0.02em;
 }
 
+.brand-logo-horizontal {
+  display: block;
+  width: auto;
+}
+
+.brand-header .brand-logo-horizontal {
+  height: 3.2rem;
+}
+
+.brand-header {
+  padding: 0.45rem 0.6rem;
+  border-radius: 16px;
+  background: rgb(239, 242, 249);
+}
+
+.brand-footer {
+  padding: 0.45rem 0.6rem;
+  border-radius: 16px;
+  background: rgb(239, 242, 249);
+}
+
+.brand-footer .brand-logo-horizontal {
+  height: 2.45rem;
+}
+
 .brand-mark {
   display: inline-grid;
   place-items: center;
@@ -617,6 +642,14 @@ p {
   .site-nav a,
   .button {
     width: 100%;
+  }
+
+  .brand-header .brand-logo-horizontal {
+    height: 2.6rem;
+  }
+
+  .brand-footer .brand-logo-horizontal {
+    height: 2.2rem;
   }
 
   .cta-row {

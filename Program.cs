@@ -4,14 +4,52 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.ContentType?.StartsWith("text/html", StringComparison.OrdinalIgnoreCase) == true)
+    {
+        context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+        context.Response.Headers.Pragma = "no-cache";
+        context.Response.Headers.Expires = "0";
+    }
+});
+
 app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.MapGet("/hjem", () => Results.Redirect("/"));
-app.MapGet("/tjenester", () => Results.Redirect("/tjenester/"));
-app.MapGet("/om-oss", () => Results.Redirect("/om-oss/"));
-app.MapGet("/kontakt", () => Results.Redirect("/kontakt/"));
+app.Use(async (context, next) =>
+{
+    var path = context.Request.Path;
+
+    if (path == "/hjem")
+    {
+        context.Response.Redirect("/");
+        return;
+    }
+
+    if (path == "/tjenester")
+    {
+        context.Response.Redirect("/tjenester/");
+        return;
+    }
+
+    if (path == "/om-oss")
+    {
+        context.Response.Redirect("/om-oss/");
+        return;
+    }
+
+    if (path == "/kontakt")
+    {
+        context.Response.Redirect("/kontakt/");
+        return;
+    }
+
+    await next();
+});
 
 app.MapPost("/api/contact", (ContactRequest request, ILogger<Program> logger) =>
 {
