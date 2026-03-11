@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt | Olsen Data</title>
+  <meta
+    name="description"
+    content="Kontakt Olsen Data for spørsmål, tilbud eller en uforpliktende prat om automatisering og nettsider.">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">OD</span>
+          <span class="brand-text">
+            <strong>Olsen Data</strong>
+            <span>Små programmer. Stor effekt.</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Hovedmeny">
+          <a href="/">Hjem</a>
+          <a href="/tjenester/">Tjenester</a>
+          <a href="/om-oss/">Om oss</a>
+          <a class="active" href="/kontakt/">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="section-inner contact-layout">
+          <div class="hero-panel">
+            <span class="hero-badge">Kontakt</span>
+            <h1>Kontakt oss</h1>
+            <p class="lead">Har du spørsmål eller ønsker du et tilbud?</p>
+            <p class="lead">Send oss en melding. Vi svarer så raskt vi kan.</p>
+            <div class="grid-two" style="margin-top: 1.5rem;">
+              <article class="contact-card">
+                <strong>Kontaktinformasjon</strong>
+                <p><strong>E-post:</strong> <a href="mailto:info@olsendata.no">info@olsendata.no</a></p>
+                <p style="margin-top: 0.7rem;"><strong>Telefon:</strong> (kommer senere)</p>
+              </article>
+              <article class="contact-card">
+                <strong>Hva gjelder det?</strong>
+                <p>Vi hjelper med både automatisering og nettsider for små bedrifter.</p>
+              </article>
+            </div>
+          </div>
+
+          <form class="contact-form" data-contact-form novalidate>
+            <span class="eyebrow">Send oss en melding</span>
+            <h2>Fyll inn skjemaet under</h2>
+
+            <div class="field">
+              <label for="name">Navn</label>
+              <input id="name" name="name" type="text" autocomplete="name">
+              <div class="field-error" data-field-error="name"></div>
+            </div>
+
+            <div class="field">
+              <label for="email">E-post</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+              <div class="field-error" data-field-error="email"></div>
+            </div>
+
+            <div class="field">
+              <label for="message">Melding</label>
+              <textarea id="message" name="message"></textarea>
+              <div class="field-error" data-field-error="message"></div>
+            </div>
+
+            <button class="button button-primary" type="submit" style="margin-top: 1rem; width: 100%;">
+              Send melding
+            </button>
+
+            <div class="form-status" data-form-status aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <a class="brand" href="/">
+            <span class="brand-mark">OD</span>
+            <span class="brand-text">
+              <strong>Olsen Data</strong>
+              <span class="muted-light">Små programmer. Stor effekt.</span>
+            </span>
+          </a>
+          <p style="margin-top: 1rem;">Ta kontakt for en uforpliktende prat om digitale forbedringer.</p>
+          <p style="margin-top: 0.7rem;">E-post: <a href="mailto:info@olsendata.no">info@olsendata.no</a></p>
+          <p style="margin-top: 0.7rem;">© <span data-year></span> Olsen Data</p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Hjem</a>
+          <a href="/tjenester/">Tjenester</a>
+          <a href="/om-oss/">Om oss</a>
+          <a href="/kontakt/">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
