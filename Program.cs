@@ -18,7 +18,16 @@ app.Use(async (context, next) =>
 
 app.UseHttpsRedirection();
 app.UseDefaultFiles();
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = context =>
+    {
+        if (context.File.Name.EndsWith(".html", StringComparison.OrdinalIgnoreCase))
+        {
+            context.Context.Response.ContentType = "text/html; charset=utf-8";
+        }
+    }
+});
 
 app.Use(async (context, next) =>
 {
