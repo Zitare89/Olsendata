@@ -54,7 +54,7 @@
     if (!payload.message.trim()) {
       errors.message = "Skriv en kort melding.";
     } else if (payload.message.trim().length < 10) {
-      errors.message = "Meldingen må være minst 10 tegn.";
+      errors.message = "Meldingen m\u00E5 v\u00E6re minst 10 tegn.";
     }
 
     return errors;
@@ -74,7 +74,7 @@
     const clientErrors = validate(payload);
     if (Object.keys(clientErrors).length > 0) {
       Object.entries(clientErrors).forEach(([field, message]) => setFieldError(field, message));
-      setStatus("error", "Skjemaet inneholder noen feil. Rett dem opp og prøv igjen.");
+      setStatus("error", "Skjemaet inneholder noen feil. Rett dem opp og pr\u00F8v igjen.");
       return;
     }
 
@@ -99,14 +99,14 @@
           setFieldError(field, Array.isArray(messages) ? messages[0] : String(messages));
         });
 
-        setStatus("error", "Kunne ikke sende meldingen. Kontroller feltene og prøv igjen.");
+        setStatus("error", "Kunne ikke sende meldingen. Kontroller feltene og pr\u00F8v igjen.");
         return;
       }
 
       form.reset();
       setStatus("success", data.message || "Meldingen ble sendt.");
     } catch {
-      setStatus("error", "Noe gikk galt under sending. Prøv igjen om litt.");
+      setStatus("error", "Noe gikk galt under sending. Pr\u00F8v igjen om litt.");
     } finally {
       submitButton.disabled = false;
     }
