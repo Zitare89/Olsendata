@@ -93,7 +93,7 @@ app.MapPost("/api/contact", (ContactRequest request, ILogger<Program> logger) =>
 
     return Results.Ok(new
     {
-        message = "Takk for meldingen. Vi svarer deg sa raskt vi kan."
+        message = "Takk for meldingen. Vi svarer deg s\u00E5 raskt vi kan."
     });
 });
 
@@ -111,16 +111,16 @@ static string ToCamelCase(string value)
 
 sealed class ContactRequest
 {
-    [Required(ErrorMessage = "Navn er pakrevd.")]
-    [StringLength(100, ErrorMessage = "Navn kan ikke vare lengre enn 100 tegn.")]
+    [Required(ErrorMessage = "Navn er p\u00E5krevd.")]
+    [StringLength(100, ErrorMessage = "Navn kan ikke v\u00E6re lengre enn 100 tegn.")]
     public string Name { get; init; } = string.Empty;
 
-    [Required(ErrorMessage = "E-post er pakrevd.")]
+    [Required(ErrorMessage = "E-post er p\u00E5krevd.")]
     [EmailAddress(ErrorMessage = "Skriv inn en gyldig e-postadresse.")]
-    [StringLength(150, ErrorMessage = "E-post kan ikke vare lengre enn 150 tegn.")]
+    [StringLength(150, ErrorMessage = "E-post kan ikke v\u00E6re lengre enn 150 tegn.")]
     public string Email { get; init; } = string.Empty;
 
-    [Required(ErrorMessage = "Melding er pakrevd.")]
-    [StringLength(2000, MinimumLength = 10, ErrorMessage = "Meldingen ma vare mellom 10 og 2000 tegn.")]
+    [Required(ErrorMessage = "Melding er p\u00E5krevd.")]
+    [StringLength(2000, MinimumLength = 10, ErrorMessage = "Meldingen m\u00E5 v\u00E6re mellom 10 og 2000 tegn.")]
     public string Message { get; init; } = string.Empty;
 }
